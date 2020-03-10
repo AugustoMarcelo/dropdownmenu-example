@@ -1,24 +1,52 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+
+import GlobalStyle from './styles/global';
+
+import ListItem from './components/ListItem';
 
 function App() {
+  const [data, setData] = useState(
+    [
+      {
+        id: 1,
+        recipient: 'Destinatário 1',
+        delivery_man: 'Entregador 1',
+        city: 'Caicó',
+        state: 'Rio Grande do Norte',
+        status: 'delivered',
+      },
+      {
+        id: 2,
+        recipient: 'Destinatário 2',
+        delivery_man: 'Entregador 2',
+        city: 'Caicó',
+        state: 'Rio Grande do Norte',
+        status: 'pending',
+      },
+      {
+        id: 3,
+        recipient: 'Destinatário 3',
+        delivery_man: 'Entregador 3',
+        city: 'Caicó',
+        state: 'Rio Grande do Norte',
+        status: 'withdrawn',
+      },
+      {
+        id: 4,
+        recipient: 'Destinatário 4',
+        delivery_man: 'Entregador 4',
+        city: 'Caicó',
+        state: 'Rio Grande do Norte',
+        status: 'canceled',
+      }
+    ]
+  );
+  
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <GlobalStyle />
+      {data.map(datum => <ListItem key={datum.id} data={datum} />)}
     </div>
   );
 }
