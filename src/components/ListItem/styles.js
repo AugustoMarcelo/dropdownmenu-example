@@ -63,6 +63,23 @@ export const Card = styled.div`
       }
     }
   }
+
+  @media (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    padding: 10px;
+
+    span.status {
+      align-self: flex-end;
+    }
+
+    div:last-child {
+      order: -1;
+      align-self: flex-end;
+    }
+  }
 `;
 
 export const Button = styled.button`
