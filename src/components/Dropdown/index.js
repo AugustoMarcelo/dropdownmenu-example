@@ -10,6 +10,8 @@ export default function Dropdown({ onView, onDelete, onEdit }) {
   function showMenu(e) {
     e.preventDefault();
 
+    if (visible) return;
+
     setVisible(true);
     
     document.addEventListener('click', closeMenu);
